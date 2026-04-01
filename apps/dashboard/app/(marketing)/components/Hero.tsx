@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { ChevronDown } from 'lucide-react'
 import styles from './Hero.module.css'
 
 function easeOut(t: number) {
@@ -106,7 +107,7 @@ const response = await client
     messages: [...]
   })
 
-// Response received ✓
+// Response received: OK
 {
   "model": "claude-sonnet-4-6",
   "tokens": 142,
@@ -128,7 +129,7 @@ const response = await client
         aria-label="Scroll to next section"
       >
         <span className={styles.scrollLabel}>Scroll</span>
-        <span className={styles.scrollChevron}>↓</span>
+        <ChevronDown className={styles.scrollChevron} size={20} />
       </button>
     </section>
   )

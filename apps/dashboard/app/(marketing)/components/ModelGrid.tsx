@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { Zap, Gift, Brain } from 'lucide-react'
 import styles from './ModelGrid.module.css'
 
 interface Model {
@@ -23,7 +24,7 @@ const models: Model[] = [
     initials: 'OA',
     context: '1M ctx',
     price: '$2.00/1M',
-    speed: '⚡ Fast',
+    speed: 'Fast',
     speedType: 'fast',
   },
   {
@@ -33,7 +34,7 @@ const models: Model[] = [
     initials: 'AN',
     context: '200K ctx',
     price: '$3.00/1M',
-    speed: '⚡ Fast',
+    speed: 'Fast',
     speedType: 'fast',
   },
   {
@@ -43,7 +44,7 @@ const models: Model[] = [
     initials: 'GO',
     context: '1M ctx',
     price: '$0.10/1M',
-    speed: '⚡ Blazing',
+    speed: 'Blazing',
     speedType: 'fast',
   },
   {
@@ -53,7 +54,7 @@ const models: Model[] = [
     initials: 'ME',
     context: '128K ctx',
     price: '$0.09/1M',
-    speed: '🆓 Free Tier',
+    speed: 'Free Tier',
     speedType: 'free',
   },
   {
@@ -63,7 +64,7 @@ const models: Model[] = [
     initials: 'MI',
     context: '128K ctx',
     price: '$2.00/1M',
-    speed: '⚡ Fast',
+    speed: 'Fast',
     speedType: 'fast',
   },
   {
@@ -73,7 +74,7 @@ const models: Model[] = [
     initials: 'QW',
     context: '256K ctx',
     price: '$0.14/1M',
-    speed: '🧠 Reasoning',
+    speed: 'Reasoning',
     speedType: 'reasoning',
   },
 ]
@@ -98,6 +99,15 @@ export default function ModelGrid() {
     cards.forEach((el) => obs.observe(el))
     return () => obs.disconnect()
   }, [])
+
+  const renderSpeedIcon = (type: Model['speedType']) => {
+    switch (type) {
+      case 'fast':      return <Zap size={14} className={styles.speedIcon} />
+      case 'free':      return <Gift size={14} className={styles.speedIcon} />
+      case 'reasoning': return <Brain size={14} className={styles.speedIcon} />
+      default:          return null
+    }
+  }
 
   return (
     <section id="models" className={styles.section} ref={sectionRef} aria-label="Model library">
@@ -129,7 +139,10 @@ export default function ModelGrid() {
               <div className={styles.footer}>
                 <div className={styles.footerLeft}>
                   <span className={styles.ctxPill}>{model.context}</span>
-                  <span className={styles.speedPill}>{model.speed}</span>
+                  <span className={styles.speedPill}>
+                    {renderSpeedIcon(model.speedType)}
+                    {model.speed}
+                  </span>
                 </div>
                 <span className={styles.price}>{model.price}</span>
               </div>

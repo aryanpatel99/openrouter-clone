@@ -1,24 +1,25 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { Key, Zap, Rocket } from 'lucide-react'
 import styles from './HowItWorks.module.css'
 
 const steps = [
   {
     num: '01',
-    icon: '🔑',
+    icon: <Key size={24} />,
     title: 'Get Your API Key',
     body: 'Create a free account and grab your key instantly. No credit card required.',
   },
   {
     num: '02',
-    icon: '⚡',
+    icon: <Zap size={24} />,
     title: 'Choose Your Model',
     body: 'Browse 300+ models. Filter by speed, cost, context window, and capability. Switch any time.',
   },
   {
     num: '03',
-    icon: '🚀',
+    icon: <Rocket size={24} />,
     title: 'Ship It',
     body: 'Point your existing OpenAI SDK to our endpoint. One line change. Fully compatible.',
   },

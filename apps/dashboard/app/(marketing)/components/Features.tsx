@@ -1,17 +1,18 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { Repeat, Zap, Shield, DollarSign, BarChart2 } from 'lucide-react'
 import styles from './Features.module.css'
 
 const topCards = [
   {
-    icon: '🔁',
+    icon: <Repeat size={20} />,
     title: 'Automatic Failover',
     body: 'If a provider goes down, we instantly re-route your request to another. Your users never notice. 99.9% uptime guaranteed.',
     large: true,
   },
   {
-    icon: '⚡',
+    icon: <Zap size={20} />,
     title: 'Edge-Optimized',
     body: 'Globally distributed infrastructure. Minimal latency between your app and inference.',
     large: false,
@@ -20,17 +21,17 @@ const topCards = [
 
 const bottomCards = [
   {
-    icon: '🛡️',
+    icon: <Shield size={20} />,
     title: 'Privacy First',
     body: 'Prompt logging OFF by default. Zero Data Retention routing available on request.',
   },
   {
-    icon: '💰',
+    icon: <DollarSign size={20} />,
     title: 'Unified Billing',
     body: 'One balance. All providers. No juggling 10 API keys and invoices.',
   },
   {
-    icon: '📊',
+    icon: <BarChart2 size={20} />,
     title: 'Usage Analytics',
     body: 'Track token spend, latency, and model performance — all in one dashboard.',
   },

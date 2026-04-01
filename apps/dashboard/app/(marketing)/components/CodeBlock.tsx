@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Check } from 'lucide-react'
 import styles from './CodeBlock.module.css'
 
 type Tab = 'python' | 'javascript' | 'curl'
@@ -102,7 +103,9 @@ export default function CodeBlock() {
             <ul className={styles.checklist}>
               {checkList.map((item) => (
                 <li key={item}>
-                  <span className={styles.checkIcon}>✓</span>
+                  <span className={styles.checkIcon}>
+                    <Check size={16} />
+                  </span>
                   {item}
                 </li>
               ))}
