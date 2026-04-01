@@ -45,14 +45,18 @@
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 140px 24px 120px;
+  padding: 140px 48px 120px;
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 64px;
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .inner { padding: 140px 32px 120px; }
 }
 
 /* ── LEFT COLUMN ── */
