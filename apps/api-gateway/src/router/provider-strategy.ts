@@ -1,4 +1,4 @@
-import { ModelConfig } from "../../data/model_provider.ts";
+import type { ModelConfig } from "@repo/types";
 
 export function getProviderStrategy(modelConfig: ModelConfig, type: string) {
   const providers = [...modelConfig.providers];

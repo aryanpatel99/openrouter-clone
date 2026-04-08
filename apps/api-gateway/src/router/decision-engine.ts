@@ -1,4 +1,4 @@
-import { classifyErrorUniversal, DecisionBucket } from "../lib/errors.ts";
+import { classifyErrorUniversal, DecisionBucket } from "../errors/index.ts";
 
 export enum RouterAction {
   RETRY,

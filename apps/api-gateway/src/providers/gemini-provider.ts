@@ -1,35 +1,18 @@
-import OpenAI from "openai";
 import { GoogleGenAI } from "@google/genai";
-import { modelRegistry } from "../utils/modelRegistry";
+import { costCalculation } from "@repo/utils";
+import type { ChatMessage } from "@repo/types";
 
 export interface AIProvider {
   providerName: string;
-  generateChat(modelSlug: string, messages: any[], options: any, apiKey: string): Promise<any>;
+  generateChat(modelSlug: string, messages: ChatMessage[], options: any, apiKey: string): Promise<any>;
 }
-
-function cost_Calculation(modelSlug_old: string, usageMetadata: any){
-  const modelSlug = "google/"+ modelSlug_old
-  console.log(modelSlug)
-
-  if(!modelRegistry[modelSlug]){
-    return 0
-  }
-    const cost_per_token = modelRegistry[modelSlug].cost_per_token
-    console.log("cost_per_token:",cost_per_token)
-    console.log("usageMetadata:",usageMetadata)
-    const cost = usageMetadata.promptTokenCount * cost_per_token.input + usageMetadata.candidatesTokenCount * cost_per_token.output + (usageMetadata.thoughtsTokenCount||0) * (cost_per_token.reasoning || 0) + (usageMetadata.cacheReadTokenCount||0) * (cost_per_token.cache_read || 0)
-    return cost 
-    
-
-}
-
 
 export class GeminiProvider implements AIProvider {
   providerName = "gemini";
 
   async generateChat(
     modelSlug: string,
-    messages: any[],
+    messages: ChatMessage[],
     options: any,
     apiKey: string
   ): Promise<any> {
@@ -49,8 +32,7 @@ export class GeminiProvider implements AIProvider {
       }
     });
 
-
-    const cost =  cost_Calculation(modelSlug, response.usageMetadata)
+    const cost = costCalculation(modelSlug, response.usageMetadata as any, "google/");
     console.log("cost from gemini provider:", cost);
 
     return response.text;

@@ -1,4 +1,4 @@
-import { ChatMessage } from "../types/model_data.ts";
+import type { ChatMessage } from "@repo/types";
 
 /**
  * MessageTransformer handles context window management for LLM requests.

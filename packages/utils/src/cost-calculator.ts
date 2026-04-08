@@ -1,5 +1,5 @@
-import type { ModelRegistryEntry } from "@openrouter/types";
-import { modelRegistry } from "@openrouter/config";
+import type { ModelRegistryEntry } from "@repo/types";
+import { modelRegistry } from "@repo/config";
 
 // ─── Usage Metadata (from Gemini / generic provider) ─────────
 export interface UsageMetadata {
