@@ -20,6 +20,15 @@ class ApiGateway {
   }
 
   private routes(): void {
+    // Health check for browsers
+    this.app.get("/", (req: Request, res: Response) => {
+      res.json({ 
+        status: "online", 
+        service: "api-gateway", 
+        message: "Send POST requests to /chat/completions" 
+      });
+    });
+
     this.app.post("/chat/completions", this.handleChatCompletions);
   }
 
