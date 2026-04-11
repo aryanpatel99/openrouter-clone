@@ -20,7 +20,11 @@
   <br>
   <a href="#-project-overview">Project Overview</a> ✦
   <a href="#-key-features">Key Features</a> ✦
-  <a href="#-system-architecture">System Architecture</a> ✦
+  <a href="#-system-architecture">Architecture</a> ✦
+  <a href="#-system-architecture-diagrams">Diagrams</a> ✦
+  <a href="#-project-structure">Structure</a> ✦
+  <a href="#-installation">Installation</a> ✦
+  <a href="#-api-configuration">API</a> ✦
   <a href="#-tech-stack">Tech Stack</a>
   <br>
 </div>
