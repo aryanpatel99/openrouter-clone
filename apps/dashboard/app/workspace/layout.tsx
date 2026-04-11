@@ -70,9 +70,8 @@ export default function WorkspaceLayout({
 
           <Separator orientation="vertical" className="h-6 hidden sm:block" />
 
-          <div className="flex items-center gap-2 ml-2">
+          <div className="flex items-center ml-2">
             <UserButton />
-            <span className="font-medium hidden sm:block text-sm">Personal</span>
           </div>
         </div>
       </header>
@@ -87,11 +86,10 @@ export default function WorkspaceLayout({
                 <Link
                   key={item.title}
                   href={item.href}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                    isActive
+                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${isActive
                       ? "bg-accent text-accent-foreground"
                       : "text-muted-foreground hover:bg-accent/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <item.icon className="h-4 w-4" />
                   {item.title}
@@ -110,11 +108,10 @@ export default function WorkspaceLayout({
                 <Link
                   key={item.title}
                   href={item.href}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                    isActive
+                  className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${isActive
                       ? "bg-accent text-accent-foreground"
                       : "text-muted-foreground hover:bg-accent/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <item.icon className="h-4 w-4" />
                   {item.title}
