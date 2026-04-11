@@ -20,7 +20,7 @@ import {
   Sun
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 const menuItems = [
   { name: "Landing", icon: Globe, href: "/" },

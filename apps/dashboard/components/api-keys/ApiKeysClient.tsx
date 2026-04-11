@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { 
   Plus, Key, Copy, Trash2, Eye, EyeOff, Check, 
   Calendar, ShieldCheck, AlertTriangle, Shield, CheckCircle2, Bot 

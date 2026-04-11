@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Search, Bell, User, Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
