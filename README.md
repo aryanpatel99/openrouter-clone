@@ -51,20 +51,27 @@ The gateway absorbs the complexity of network failures, latency spikes, and rout
 
 ### Developer Tooling
 
-**Tracers**
-Full request lifecycle tracing captures which provider was selected, if a retry or fallback occurred, exact latency metrics at each stage, and absolute token usage. You gain profound insight into your pipeline behavior.
+**DevTools Tracing Session**
+See your request in real-time as it moves through the system—from pending to completion. Gain deep visibility into the full lifecycle of every execution within a dedicated tracing session.
+
+- **Live Status Updates**: Real-time tracking of pending, success, and error states.
+- **Payload Visibility**: Full request and response transmission details.
+- **Performance**: Latency metrics and exact token usage insights.
+- **Routing**: Visibility into retries and provider selection logic.
+
+Everything is transparent, so you always know exactly what’s happening.
 
 <br>
 
 ### Coming Soon
 
-| Capability         | Impact                                                                                   |
-| :----------------- | :--------------------------------------------------------------------------------------- |
-| **Presets**        | Swap LLM parameters independently without compiling or pushing application code updates. |
-| **Budget Limits**  | Establish spending maximums per request or per active user.                              |
-| **Multimodality**  | Direct proxy compatibility for image inputs, PDF document analysis, and video.           |
-| **Zero Insurance** | If all fallback routes and retries fail entirely, the execution is never billed.         |
-| **BYOK**           | Unbind yourself from billing by letting end-users provide their own API keys.            |
+| Capability         | Impact                                                                                           |
+| :----------------- | :----------------------------------------------------------------------------------------------- |
+| **Presets**        | Define model configs in the dashboard and apply them on the fly using @preset in your SDK calls. |
+| **Budget Limits**  | Establish spending maximums per request or per active user.                                      |
+| **Multimodality**  | Direct proxy compatibility for image inputs, PDF document analysis, and video.                   |
+| **Zero Insurance** | If all fallback routes and retries fail entirely, the execution is never billed.                 |
+| **BYOK**           | Unbind yourself from billing by letting end-users provide their own API keys.                    |
 
 <br>
 
@@ -132,17 +139,23 @@ All telemetry records and trace logs are saved asynchronously to **PostgreSQL**.
 
 <div align="center">
 
-![Class Diagram](./docs/assets/class_diagram.png)
+### UML Diagrams
+
+![Class Diagram](./docs/assets/class_diagram.jpeg)
 _Class Diagram_
+
+![Sequence Diagram](./docs/assets/sequence_diagram.png)
+_Sequence Diagram_
 
 ![Usecase Diagram](./docs/assets/use_case_diagram.svg)
 _Usecase Diagram_
 
+<br>
+
+### Database Schema
+
 ![ER Diagram](./docs/assets/er_diagram.png)
 _ER Diagram_
-
-![Sequence Diagram](./docs/assets/sequence_diagram.jpeg)
-_Sequence Diagram_
 
 </div>
 
@@ -232,39 +245,24 @@ npm run dev
 Harnessing the routing engine requires minimal declarative configuration inside standard structures.
 
 ```typescript
-import { OpenRouterClient } from "@openrouter/sdk";
+import OpenAI from "openai";
 
-// Point to the local self-hosted gateway
-const client = new OpenRouterClient({
-  baseURL: "http://localhost:4000/v1",
-  apiKey: "or-...",
+const openai = new OpenAI({
+  baseURL: "https://api.gateway.com/v1", // Points to your backend
+  apiKey: "gateway-sk-12345", // The API Key from your DB
 });
 
-const execute = async () => {
-  const stream = await client.chat.generate({
-    messages: [{ role: "user", content: "Compare system architectures." }],
-
-    // 1. Declare the fallback hierarchy
-    models: [
-      "google/gemini-2.5-pro",
-      "anthropic/claude-3.5-sonnet",
-      "meta/llama-3-70b",
+async function main() {
+  const completion = await openai.chat.completions.create({
+    model: "anthropic/claude-3-haiku", // The model slug in your DB
+    messages: [
+      { role: "system", content: "You are a helpful assistant." },
+      { role: "user", content: "What is the capital of France?" },
     ],
-
-    // 2. Declare routing priorities
-    routingStrategy: "fastest",
-    retries: {
-      attempts: 3,
-      delayMs: 1500,
-    },
-
+    temperature: 0.7,
     stream: true,
   });
-
-  for await (const chunk of stream) {
-    process.stdout.write(chunk.content);
-  }
-};
+}
 ```
 
 <br>
