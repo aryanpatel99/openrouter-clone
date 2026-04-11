@@ -775,6 +775,274 @@
       "completedAt": 1775710882872,
       "duration": 4071,
       "error": "All models and providers failed."
+    },
+    {
+      "id": "7aee54c0-d813-4d19-adec-f9ba6577c17e",
+      "status": "success",
+      "operation": "chat",
+      "model": "google/gemini-3.1-pro, google/gemini-2.5-pro, google/gemini-2.5-flash",
+      "startedAt": 1775892920804,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-3.1-pro",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1775892920816,
+          "request": {
+            "model": "gemini-3.1-pro",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful AI."
+              },
+              {
+                "role": "user",
+                "content": "capital of India"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1775892921865,
+          "duration": 1049,
+          "error": "{\"error\":{\"code\":404,\"message\":\"models/gemini-3.1-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.\",\"status\":\"NOT_FOUND\"}}"
+        },
+        {
+          "index": 1,
+          "model": "gemini-2.5-pro",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1775892921868,
+          "request": {
+            "model": "gemini-2.5-pro",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful AI."
+              },
+              {
+                "role": "user",
+                "content": "capital of India"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1775892922150,
+          "duration": 282,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-pro\\nPlease retry in 37.932114463s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-pro\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-pro\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-pro\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerDay-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"37s\"}]}}"
+        },
+        {
+          "index": 2,
+          "model": "gemini-2.5-pro",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1775892922631,
+          "request": {
+            "model": "gemini-2.5-pro",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful AI."
+              },
+              {
+                "role": "user",
+                "content": "capital of India"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1775892922899,
+          "duration": 268,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-pro\\nPlease retry in 37.1672437s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerDay-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"37s\"}]}}"
+        },
+        {
+          "index": 3,
+          "model": "gemini-2.5-pro",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1775892923772,
+          "request": {
+            "model": "gemini-2.5-pro",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful AI."
+              },
+              {
+                "role": "user",
+                "content": "capital of India"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1775892923924,
+          "duration": 152,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-pro\\nPlease retry in 36.074944832s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerDay-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-pro\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"36s\"}]}}"
+        },
+        {
+          "index": 4,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "success",
+          "startedAt": 1775892923926,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful AI."
+              },
+              {
+                "role": "user",
+                "content": "capital of India"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1775892925558,
+          "duration": 1632,
+          "response": {
+            "content": "The capital of India is **New Delhi**.",
+            "provider": "google",
+            "actualModel": "gemini-2.5-flash"
+          }
+        }
+      ],
+      "input": {
+        "model": "google/gemini-3.1-pro, google/gemini-2.5-pro, google/gemini-2.5-flash",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful AI."
+          },
+          {
+            "role": "user",
+            "content": "capital of India"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1775892925561,
+      "duration": 4757,
+      "provider": "google"
+    },
+    {
+      "id": "cdec2fef-66de-4ed8-924b-310bf6baec77",
+      "status": "success",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash, openai/gpt-4o",
+      "startedAt": 1775893921509,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "success",
+          "startedAt": 1775893921519,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of France?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1775893923379,
+          "duration": 1860,
+          "response": {
+            "content": "The capital of France is **Paris**.",
+            "provider": "google",
+            "actualModel": "gemini-2.5-flash"
+          }
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash, openai/gpt-4o",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of France?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1775893923382,
+      "duration": 1873,
+      "provider": "google"
+    },
+    {
+      "id": "5ca54505-6a08-4dda-8803-ee8cea9d0d56",
+      "status": "success",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash, openai/gpt-4o",
+      "startedAt": 1775894028659,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "success",
+          "startedAt": 1775894028661,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of France?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1775894030549,
+          "duration": 1888,
+          "response": {
+            "content": "The capital of France is Paris.",
+            "provider": "google",
+            "actualModel": "gemini-2.5-flash"
+          }
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash, openai/gpt-4o",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of France?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1775894030552,
+      "duration": 1893,
+      "provider": "google"
     }
   ]
 }

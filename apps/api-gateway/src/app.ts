@@ -23,33 +23,43 @@ class ApiGateway {
     this.app.post("/chat/completions", this.handleChatCompletions);
   }
 
+  private normalizeRequest(data: any): NormalizedChatRequest {
+    const mainModel = data.model;
+    const fallbackModels = data.extra?.fallback_models || [];
+    const model_slugs = [mainModel, ...fallbackModels].filter(Boolean);
+
+    return {
+      model_slug: model_slugs,
+      messages: data.messages || [],
+      temperature: data.temperature ?? 0.7,
+      retry: data.extra?.retry ?? 0,
+      provider: data.extra?.provider ?? "cheap",
+      streaming: data.stream ?? false,
+      preset: data.extra?.preset ?? false,
+      message_transform: data.extra?.message_transform ?? false,
+    };
+  }
+
   private handleChatCompletions = async (
     req: Request,
     res: Response,
   ): Promise<any> => {
-    const authorization = req.headers["authorization"];
+    try {
+      const data = req.body;
+      const authorization = req.headers["authorization"];
 
-    const normalized: NormalizedChatRequest = {
-      model_slug: ["google/gemini-3.1-pro", "google/gemini-2.5-pro", "google/gemini-2.5-flash"],
-      messages: [
-        { role: "system", content: "You are a helpful AI." },
-        { role: "user", content: "capital of India" },
-      ],
-      temperature: 0.7,
-      retry: 2,
-      provider: "cheap",
-      streaming: true,
-      preset: false,
-      message_transform: true,
-    };
+      const normalized = this.normalizeRequest(data);
 
-    console.log("normalized:", normalized);
+      console.log("normalized:", normalized);
 
-    const response = await llmRouter.callLlm(normalized);
+      const response = await llmRouter.callLlm(normalized);
 
-    console.log("response from llm router:");
-    console.log(response);
-    res.json(response);
+      console.log("response from llm router:", response);
+      res.json(response);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Failed to process request" });
+    }
   };
 
   start(): void {
