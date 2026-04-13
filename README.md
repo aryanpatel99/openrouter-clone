@@ -252,21 +252,29 @@ Harnessing the routing engine requires minimal declarative configuration inside 
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  baseURL: "https://api.gateway.com/v1", // Points to your backend
-  apiKey: "gateway-sk-12345", // The API Key from your DB
+  baseURL: "https://openrouter-clone-api-gateway.onrender.com/v1",
+  apiKey: "gateway-sk-12345",
 });
 
-async function main() {
-  const completion = await openai.chat.completions.create({
-    model: "anthropic/claude-3-haiku", // The model slug in your DB
-    messages: [
-      { role: "system", content: "You are a helpful assistant." },
-      { role: "user", content: "What is the capital of France?" },
-    ],
-    temperature: 0.7,
-    stream: true,
-  });
-}
+const response = await openai.chat.completions.create({
+      model: "google/gemini-3.1-pro", // Primary Model
+      messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: "What is the capital of germany?" },
+      ],
+      temperature: 0.7,
+      stream: false,
+
+      // --- OPENROUTER CUSTOM EXTENSIONS ---
+      extra: {
+        fallback_models: [
+          "anthropic/claude-3-haiku",
+          "google/gemini-2.5-flash",
+        ],
+        provider: "cheap", // Override standard routing mechanism
+        retry: 3, // Set custom retry handler count
+      },
+    });
 ```
 
 <br>
