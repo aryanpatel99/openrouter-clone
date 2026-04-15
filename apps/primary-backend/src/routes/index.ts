@@ -1,8 +1,10 @@
+// @ts-ignore
 import { Router } from "express";
 import { 
   userController, 
   apiKeyController, 
-  byoKeyController
+  byoKeyController,
+  webhookController
 } from "../controllers/index.ts";
 
 export const router = Router();
@@ -15,3 +17,6 @@ router.put("/users/:id", userController.update);
 // Entity Creation Endpoints
 router.post("/apikeys", apiKeyController.create);
 router.post("/byokeys", byoKeyController.create);
+
+// Clerk Webhook
+router.post("/webhooks/clerk", webhookController.handleClerkWebhook);

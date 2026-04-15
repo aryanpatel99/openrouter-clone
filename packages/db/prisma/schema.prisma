@@ -10,7 +10,7 @@ datasource db {
 model User {
   id            Int      @id @default(autoincrement())
   clerkUserId   String   @unique
-  credits       Float    @default(1000)
+  credits       BigInt   @default(1000000000)
 
   apiKeys       PlatformUserApiKey[]
   byoKeys       UserProviderKey[]
@@ -29,10 +29,10 @@ model PlatformUserApiKey {
   rateLimitRPM  Int
   rateLimitTPM  Int
 
-  budgetLimit   Float?
+  budgetLimit   BigInt?
   zdrEnabled    Boolean  @default(false)
 
-  creditsUsed   Float    @default(0)
+  creditsUsed   BigInt    @default(0)
 
   isActive      Boolean  @default(true)
   lastUsedAt    DateTime?
@@ -99,8 +99,8 @@ model ModelProviderMapping {
 
   providerModelName String
 
-  inputCost   Float
-  outputCost  Float
+  inputCost   BigInt
+  outputCost  BigInt
 
   latency     Float?
   throughput  Float?
@@ -128,7 +128,7 @@ model Conversation {
   inputTokens  Int
   outputTokens Int
 
-  cost         Float
+  cost         BigInt
 
   mode         String
   status       String
@@ -169,7 +169,7 @@ model Transaction {
   id        Int @id @default(autoincrement())
 
   userId    Int
-  amount    Float
+  amount    BigInt
   status    String
   provider  String
 
@@ -187,7 +187,7 @@ model UsageAnalytics {
 
   totalRequests Int
   totalTokens   Int
-  totalCost     Float
+  totalCost     BigInt
 
   date       DateTime
 }

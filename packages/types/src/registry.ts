@@ -1,16 +1,16 @@
 // ─── Cost Per Token ──────────────────────────────────────────
 export interface CostPerToken {
-  input: number;
-  output: number;
-  reasoning?: number;
-  cache_read?: number;
+  input: bigint;
+  output: bigint;
+  reasoning?: bigint;
+  cache_read?: bigint;
 }
 
 // ─── Cost Per Request ────────────────────────────────────────
 export interface CostPerRequest {
-  web_search?: number;
-  request?: number;
-  image?: number;
+  web_search?: bigint;
+  request?: bigint;
+  image?: bigint;
 }
 
 // ─── Model Registry Entry ────────────────────────────────────
@@ -26,7 +26,7 @@ export interface ModelRegistryEntry {
   cost_per_token: CostPerToken;
   cost_per_request: CostPerRequest;
 
-  worst_case_cost: number;
+  worst_case_cost: bigint;
 }
 
 // ─── OpenRouter Raw Model (API shape) ────────────────────────

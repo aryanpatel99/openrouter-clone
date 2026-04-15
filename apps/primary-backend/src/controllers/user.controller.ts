@@ -1,5 +1,8 @@
+// @ts-ignore
 import { Request, Response } from "express";
+// @ts-ignore
 import { prisma } from "@repo/db";
+import { toMicros } from "@repo/utils";
 
 export const userController = {
   // Get all users
@@ -43,14 +46,16 @@ export const userController = {
       const { id } = req.params;
       const { credits } = req.body;
 
+      const clerkUserId = Array.isArray(id) ? id[0] : id;
+
       if (credits === undefined) {
         res.status(400).json({ error: "Nothing to update. Provide credits." });
         return;
       }
 
       const updatedUser = await prisma.user.update({
-        where: { clerkUserId: id },
-        data: { credits },
+        where: { clerkUserId },
+        data: { credits: toMicros(credits) },
       });
 
       res.json(updatedUser);

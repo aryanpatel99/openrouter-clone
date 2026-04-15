@@ -1,4 +1,5 @@
 import type { OpenRouterModel, ModelRegistryEntry } from "@repo/types";
+import { toMicros } from "@repo/utils";
 import openrouterModelRegistry from "./openrouter-registry.json";
 
 // ─── Helpers ─────────────────────────────────────────────────
@@ -14,22 +15,22 @@ export function mapOpenRouterModels(
   const registry: Record<string, ModelRegistryEntry> = {};
 
   for (const m of models) {
-    const inputPrice = num(m.pricing?.prompt);
-    const outputPrice = num(m.pricing?.completion);
+    const inputPrice = toMicros(num(m.pricing?.prompt));
+    const outputPrice = toMicros(num(m.pricing?.completion));
 
-    const reasoningPrice = num(m.pricing?.internal_reasoning);
-    const cacheReadPrice = num(m.pricing?.input_cache_read);
-    const webSearchPrice = num(m.pricing?.web_search);
-    const requestPrice = num(m.pricing?.request);
-    const imagePrice = num(m.pricing?.image);
+    const reasoningPrice = toMicros(num(m.pricing?.internal_reasoning));
+    const cacheReadPrice = toMicros(num(m.pricing?.input_cache_read));
+    const webSearchPrice = toMicros(num(m.pricing?.web_search));
+    const requestPrice = toMicros(num(m.pricing?.request));
+    const imagePrice = toMicros(num(m.pricing?.image));
 
     const maxInput = m.context_length;
     const maxOutput = m.top_provider?.max_completion_tokens ?? 4096;
 
-    const inputWorst = maxInput * inputPrice;
-    const outputWorst = maxOutput * outputPrice;
-    const reasoningWorst = maxOutput * reasoningPrice;
-    const cacheWorst = maxInput * cacheReadPrice;
+    const inputWorst = BigInt(maxInput) * inputPrice;
+    const outputWorst = BigInt(maxOutput) * outputPrice;
+    const reasoningWorst = BigInt(maxOutput) * reasoningPrice;
+    const cacheWorst = BigInt(maxInput) * cacheReadPrice;
 
     const totalWorst =
       inputWorst +

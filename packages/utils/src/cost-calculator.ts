@@ -27,7 +27,7 @@ export function costCalculation(
   modelSlug: string,
   usage: UsageMetadata,
   providerPrefix?: string
-): number {
+): bigint {
   const fullSlug = providerPrefix
     ? `${providerPrefix}${modelSlug}`
     : modelSlug;
@@ -36,16 +36,16 @@ export function costCalculation(
 
   if (!entry) {
     console.warn(`[cost-calculator] Model "${fullSlug}" not found in registry`);
-    return 0;
+    return BigInt(0);
   }
 
   const { cost_per_token } = entry;
 
   const cost =
-    usage.promptTokenCount * cost_per_token.input +
-    usage.candidatesTokenCount * cost_per_token.output +
-    (usage.thoughtsTokenCount || 0) * (cost_per_token.reasoning || 0) +
-    (usage.cacheReadTokenCount || 0) * (cost_per_token.cache_read || 0);
+    BigInt(usage.promptTokenCount) * BigInt(cost_per_token.input) +
+    BigInt(usage.candidatesTokenCount) * BigInt(cost_per_token.output) +
+    BigInt(usage.thoughtsTokenCount || 0) * BigInt(cost_per_token.reasoning || 0) +
+    BigInt(usage.cacheReadTokenCount || 0) * BigInt(cost_per_token.cache_read || 0);
 
   return cost;
 }

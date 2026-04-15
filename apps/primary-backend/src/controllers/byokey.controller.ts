@@ -1,4 +1,6 @@
+// @ts-ignore
 import { Request, Response } from "express";
+// @ts-ignore
 import { prisma } from "@repo/db";
 
 export const byoKeyController = {

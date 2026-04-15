@@ -7,6 +7,13 @@ export {
 } from "./cost-calculator.ts";
 
 export {
+  MICRO_SCALE,
+  toMicros,
+  toDollars,
+  formatCurrency,
+} from "./currency.ts";
+
+export {
   Logger,
   createLogger,
   type LogLevel,
