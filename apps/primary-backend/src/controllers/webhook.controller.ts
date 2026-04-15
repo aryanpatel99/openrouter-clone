@@ -35,11 +35,12 @@ export const webhookController = {
 
       if (type === "user.created") {
         const clerkUserId = data.id;
+        const username = data.username || data.first_name || null;
 
         const user = await prisma.user.upsert({
           where: { clerkUserId },
-          update: {},
-          create: { clerkUserId },
+          update: { username },
+          create: { clerkUserId, username },
         });
 
         res.status(200).json({ success: true, userId: user.id });
