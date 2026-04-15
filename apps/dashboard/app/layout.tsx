@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { dark } from '@clerk/themes'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,7 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+     theme: dark,
+   }}>
       <html lang="en" className="scroll-smooth dark">
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
