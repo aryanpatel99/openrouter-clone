@@ -1043,6 +1043,480 @@
       "completedAt": 1775894030552,
       "duration": 1893,
       "provider": "google"
+    },
+    {
+      "id": "883687df-e409-4475-8bc6-76cd409355b0",
+      "status": "success",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash, openai/gpt-4o",
+      "startedAt": 1776027461693,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "success",
+          "startedAt": 1776027461704,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of France?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776027462933,
+          "duration": 1229,
+          "response": {
+            "content": "The capital of France is **Paris**.",
+            "provider": "google",
+            "actualModel": "gemini-2.5-flash"
+          }
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash, openai/gpt-4o",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of France?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1776027462934,
+      "duration": 1241,
+      "provider": "google"
+    },
+    {
+      "id": "a4f0bde2-0a14-49da-b34a-c2a650c65d7a",
+      "status": "success",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash, openai/gpt-4o",
+      "startedAt": 1776027490256,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "success",
+          "startedAt": 1776027490257,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776027491535,
+          "duration": 1278,
+          "response": {
+            "content": "The capital of India is **New Delhi**.",
+            "provider": "google",
+            "actualModel": "gemini-2.5-flash"
+          }
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash, openai/gpt-4o",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of india?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1776027491536,
+      "duration": 1280,
+      "provider": "google"
+    },
+    {
+      "id": "d6605776-05bc-4687-9164-7b27de81fab0",
+      "status": "success",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash, openai/gpt-4o",
+      "startedAt": 1776135773126,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "success",
+          "startedAt": 1776135773138,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776135774933,
+          "duration": 1795,
+          "response": {
+            "content": "The capital of India is **New Delhi**.",
+            "provider": "google",
+            "actualModel": "gemini-2.5-flash"
+          }
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash, openai/gpt-4o",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of india?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1776135774936,
+      "duration": 1810,
+      "provider": "google"
+    },
+    {
+      "id": "5e23a887-b961-41eb-b877-979ed16bd2f0",
+      "status": "error",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash",
+      "startedAt": 1776136452706,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136452719,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136453872,
+          "duration": 1153,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 46.416528141s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"46s\"}]}}"
+        },
+        {
+          "index": 1,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136454379,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136454775,
+          "duration": 396,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 45.455942003s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"45s\"}]}}"
+        },
+        {
+          "index": 2,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136455692,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136456149,
+          "duration": 457,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 44.099003632s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"44s\"}]}}"
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of india?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1776136456153,
+      "duration": 3447,
+      "error": "All models and providers failed."
+    },
+    {
+      "id": "936ea39d-05f9-4ea8-a14b-231d6852a125",
+      "status": "error",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash",
+      "startedAt": 1776136456628,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136456630,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136457035,
+          "duration": 405,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 43.216172968s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"43s\"}]}}"
+        },
+        {
+          "index": 1,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136457578,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136457969,
+          "duration": 391,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 42.27497533s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"42s\"}]}}"
+        },
+        {
+          "index": 2,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136458959,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136459439,
+          "duration": 480,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 40.910312689s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"40s\"}]}}"
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of india?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1776136459443,
+      "duration": 2815,
+      "error": "All models and providers failed."
+    },
+    {
+      "id": "563e22cb-fae2-4e82-8e7b-ea13c09626e1",
+      "status": "error",
+      "operation": "chat",
+      "model": "google/gemini-2.5-flash",
+      "startedAt": 1776136460385,
+      "steps": [
+        {
+          "index": 0,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136460386,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136460868,
+          "duration": 482,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 39.37532699s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"39s\"}]}}"
+        },
+        {
+          "index": 1,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136461369,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136461799,
+          "duration": 430,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 38.503653626s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"38s\"}]}}"
+        },
+        {
+          "index": 2,
+          "model": "gemini-2.5-flash",
+          "provider": "google",
+          "status": "error",
+          "startedAt": 1776136462773,
+          "request": {
+            "model": "gemini-2.5-flash",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "What is the capital of india?"
+              }
+            ],
+            "temperature": 0.7,
+            "provider_strategy": "cheap"
+          },
+          "completedAt": 1776136463166,
+          "duration": 393,
+          "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 37.080617893s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"37s\"}]}}"
+        }
+      ],
+      "input": {
+        "model": "google/gemini-2.5-flash",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant."
+          },
+          {
+            "role": "user",
+            "content": "What is the capital of india?"
+          }
+        ],
+        "temperature": 0.7,
+        "provider_strategy": "cheap"
+      },
+      "completedAt": 1776136463169,
+      "duration": 2784,
+      "error": "All models and providers failed."
     }
   ]
 }
