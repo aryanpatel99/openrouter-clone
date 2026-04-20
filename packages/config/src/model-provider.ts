@@ -185,6 +185,19 @@ export const modelProvider: ModelConfigMap = {
     ],
   },
 
+  "gemini-3-flash-preview": {
+    max_tokens: 1000000,
+    streaming: true,
+    providers: [
+      {
+        provider: "google",
+        provider_model: "gemini-3-flash-preview",
+        cost: { input: 0.003, output: 0.009 },
+        metrics: { latency: 0.9, throughput: 0.9, reliability: 0.9 },
+      },
+    ],
+  },
+
   "gemini-2.5-computer-use": {
     max_tokens: 1000000,
     streaming: true,

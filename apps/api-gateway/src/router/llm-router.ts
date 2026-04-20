@@ -26,7 +26,8 @@ export class LLMRouter {
     throw error;
   }
 
-  private getApiKey(): string {
+  private getApiKey(byok?: string): string {
+    if (byok) return byok;
     const key = process.env.GEMINI_API_KEY || "";
     if (!key) {
       throw new Error("API Key is missing in environment variables.");
@@ -52,7 +53,10 @@ export class LLMRouter {
       });
 
       try {
-        const apiKey = this.getApiKey();
+        const apiKey = this.getApiKey(normalized.byok);
+        if (normalized.byok) {
+          console.log(`[BYOK] Using user-provided API key for ${modelName}`);
+        }
         const result = await providerInstance.generateChat(
           modelName,
           normalized.messages,

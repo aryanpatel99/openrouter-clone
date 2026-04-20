@@ -20,4 +20,6 @@ export interface NormalizedChatRequest {
 
   preset: boolean;
   message_transform: boolean;
+
+  byok?: string;
 }

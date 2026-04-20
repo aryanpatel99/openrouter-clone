@@ -1,7 +1,15 @@
-import "dotenv/config";
+import dotenv from "dotenv";
 import express, { type Express, type Request, type Response } from "express";
 import { llmRouter } from "./router/llm-router.ts";
+import { apiKeyGate } from "./middleware/apiKeyGate.ts";
 import type { NormalizedChatRequest } from "@repo/types";
+
+dotenv.config();
+
+if (!process.env.DATABASE_URL) {
+  console.error("ERROR: DATABASE_URL is not set. Check your .env file.");
+  process.exit(1);
+}
 
 class ApiGateway {
   private app: Express;
@@ -21,18 +29,18 @@ class ApiGateway {
 
   private routes(): void {
     // Health check for browsers
-    this.app.get("/", (req: Request, res: Response) => {
-      res.json({ 
-        status: "online", 
-        service: "api-gateway", 
-        message: "Send POST requests to /chat/completions" 
+    this.app.get("/", (_req: Request, res: Response) => {
+      res.json({
+        status: "online",
+        service: "api-gateway",
+        message: "Send POST requests to /chat/completions"
       });
     });
 
-    // OpenAI SDK standard path
-    this.app.post("/v1/chat/completions", this.handleChatCompletions);
+    // OpenAI SDK standard path with API key verification
+    this.app.post("/v1/chat/completions", apiKeyGate, this.handleChatCompletions);
 
-    this.app.post("/chat/completions", this.handleChatCompletions);
+    this.app.post("/chat/completions", apiKeyGate, this.handleChatCompletions);
   }
 
   private normalizeRequest(data: any): NormalizedChatRequest {
@@ -49,6 +57,9 @@ class ApiGateway {
       streaming: data.stream ?? false,
       preset: data.extra?.preset ?? false,
       message_transform: data.extra?.message_transform ?? false,
+      byok: typeof data.extra?.byok === "string" && data.extra.byok.trim()
+        ? data.extra.byok.trim()
+        : undefined,
     };
   }
 
@@ -58,19 +69,21 @@ class ApiGateway {
   ): Promise<any> => {
     try {
       const data = req.body;
-      const authorization = req.headers["authorization"];
 
       const normalized = this.normalizeRequest(data);
 
-      console.log("normalized:", normalized);
+      console.log("[Chat Completions]", {
+        apiKeyId: req.apiKey?.id,
+        userId: req.user?.id,
+        model: data.model,
+      });
 
       const response = await llmRouter.callLlm(normalized);
 
-      console.log("response from llm router:", response);
       res.json(response);
     } catch (error: any) {
-      console.error(error);
-      
+      console.error("[Chat Completions Error]", error);
+
       if (error.name === "ModelNotRegisteredError") {
         res.status(404).json({
           error: {
