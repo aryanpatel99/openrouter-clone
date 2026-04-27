@@ -3,7 +3,7 @@ title: Retry Policy
 description: Resilient error handling for high-availability applications.
 ---
 
-OpenRouter's gateway has a built-in retry mechanism that handles transient network errors and provider timeouts automatically.
+Orbyt's gateway has a built-in retry mechanism that handles transient network errors and provider timeouts automatically.
 
 ### Configuring Retries per Request
 
@@ -22,7 +22,7 @@ const response = await openai.chat.completions.create({
   messages: [{ role: "user", content: "Analyze this dataset." }],
   
   // --- OPENROUTER CUSTOM EXTENSIONS ---
-  // @ts-expect-error OpenRouter custom properties
+  // @ts-expect-error Orbyt custom properties
   extra: {
     // Set custom retry handler count (default 2)
     retry: 3 

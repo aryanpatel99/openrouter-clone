@@ -29,12 +29,12 @@ export default function Navbar() {
       <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
-            AetherRoute
+            Orbyt
           </Link>
 
           <ul className={styles.links}>
             <li><a href="#models">Models</a></li>
-            <li><Link href="/docs">Docs</Link></li>
+            <li><a href={process.env.NEXT_PUBLIC_DOCS_URL}>Docs</a></li>
             <li><a href="#pricing">Pricing</a></li>
           </ul>
 
@@ -82,7 +82,7 @@ export default function Navbar() {
           &times;
         </button>
         <a href="#models" className={styles.drawerLink} onClick={closeMenu}>Models</a>
-        <Link href="/docs" className={styles.drawerLink} onClick={closeMenu}>Docs</Link>
+        <a href={process.env.NEXT_PUBLIC_DOCS_URL} className={styles.drawerLink} onClick={closeMenu}>Docs</a>
         <a href="#pricing" className={styles.drawerLink} onClick={closeMenu}>Pricing</a>
         <Link href="/workspace/api-keys" className={styles.drawerLink} onClick={closeMenu}>Get API Key</Link>
       </div>

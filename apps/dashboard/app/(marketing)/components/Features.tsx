@@ -63,7 +63,7 @@ export default function Features() {
     <section id="features" className={styles.section} ref={sectionRef} aria-label="Features">
       <div className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.eyebrow}>Why AetherRoute</p>
+          <p className={styles.eyebrow}>Why Orbyt</p>
           <h2 className={styles.title}>Built for Builders Who Ship</h2>
         </div>
 

@@ -1,6 +1,6 @@
 <div align="center">
   <br>
-  <h1>O P E N R O U T E R</h1>
+  <h1>O R B Y T</h1>
   <p>
     <b>A self-hosted LLM API gateway.</b>
   </p>
@@ -201,8 +201,8 @@ _ER Diagram_
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/aetherroute.git
-cd aetherroute
+git clone https://github.com/Srijan76-code/openrouter-clone.git
+cd openrouter-clone
 npm install
 ```
 

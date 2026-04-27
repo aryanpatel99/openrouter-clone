@@ -52,7 +52,7 @@ const enterprisePlan = {
     'Dedicated account support',
   ],
   cta: 'Contact Us',
-  ctaHref: 'mailto:hello@openrouterclone.ai',
+  ctaHref: 'mailto:hello@orbyt.ai',
   popular: false,
 }
 

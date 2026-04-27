@@ -80,8 +80,8 @@ export function HeroSection() {
             <div className="p-6 text-left overflow-x-auto text-sm md:text-base font-mono leading-relaxed">
               <span className="text-purple-400">import</span> {"{"} OpenAI {"}"} <span className="text-purple-400">from</span> <span className="text-green-300">"openai"</span>;<br /><br />
               <span className="text-purple-400">const</span> client = <span className="text-purple-400">new</span> <span className="text-blue-300">OpenAI</span>({"{"}<br />
-              &nbsp;&nbsp;baseURL: <span className="text-green-300">"https://openrouter.ai/api/v1"</span>,<br />
-              &nbsp;&nbsp;apiKey: <span className="text-blue-400">process.env.OPENROUTER_API_KEY</span>,<br />
+              &nbsp;&nbsp;baseURL: <span className="text-green-300">"https://api.orbyt.ai/v1"</span>,<br />
+              &nbsp;&nbsp;apiKey: <span className="text-blue-400">process.env.ORBYT_API_KEY</span>,<br />
               {"}"});<br /><br />
               <span className="text-purple-400">const</span> response = <span className="text-purple-400">await</span> client.chat.completions.<span className="text-blue-300">create</span>({"{"}<br />
               &nbsp;&nbsp;model: <span className="text-green-300">"anthropic/claude-3-opus"</span>,<br />

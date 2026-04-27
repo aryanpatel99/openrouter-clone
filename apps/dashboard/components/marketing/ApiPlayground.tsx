@@ -19,8 +19,8 @@ export function ApiPlayground() {
   const [renderedText, setRenderedText] = useState("");
 
   const copyCode = () => {
-    navigator.clipboard.writeText(`curl -X POST https://openrouter.ai/api/v1/chat/completions \\
-  -H "Authorization: Bearer $OPENROUTER_API_KEY" \\
+    navigator.clipboard.writeText(`curl -X POST https://api.orbyt.ai/v1/chat/completions \\
+  -H "Authorization: Bearer $ORBYT_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
     "model": "${activeTab}",
@@ -113,7 +113,7 @@ export function ApiPlayground() {
               </div>
               
               <pre className="text-sm font-mono leading-relaxed overflow-x-auto text-gray-300">
-                <span className="text-blue-400">curl</span> -X POST https://openrouter.ai/api/v1/chat/completions \<br/>
+                <span className="text-blue-400">curl</span> -X POST https://api.orbyt.ai/v1/chat/completions \<br/>
                 &nbsp;&nbsp;-H <span className="text-green-300">"Authorization: Bearer $API_KEY"</span> \<br/>
                 &nbsp;&nbsp;-H <span className="text-green-300">"Content-Type: application/json"</span> \<br/>
                 &nbsp;&nbsp;-d '{"{"}<br/>

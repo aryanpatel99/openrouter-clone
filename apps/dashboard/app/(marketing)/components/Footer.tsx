@@ -19,13 +19,13 @@ export default function Footer() {
         <div className={styles.grid}>
           {/* Brand */}
           <div>
-            <div className={styles.logo}>AetherRoute</div>
+            <div className={styles.logo}>Orbyt</div>
             <div className={styles.tagline}>One API. Every Model.</div>
             <a
-              href="mailto:hello@aetherroute.ai"
+              href="mailto:hello@orbyt.ai"
               className={styles.email}
             >
-              hello@aetherroute.ai
+              hello@orbyt.ai
             </a>
           </div>
 
@@ -69,7 +69,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className={styles.bottom}>
           <span className={styles.copy}>
-            &copy; 2025 AetherRoute. All rights reserved.
+            &copy; 2025 Orbyt. All rights reserved.
           </span>
           <div className={styles.socials}>
             <a

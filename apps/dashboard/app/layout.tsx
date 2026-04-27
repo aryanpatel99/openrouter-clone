@@ -12,7 +12,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { QueryProvider } from "@/components/providers/query-provider";
 
 export const metadata: Metadata = {
-  title: "AetherRoute — One API. Every Model.",
+  title: "Orbyt — One API. Every Model.",
   description:
     "Access 300+ LLMs through a single OpenAI-compatible endpoint. Switch models without changing your code.",
 };
